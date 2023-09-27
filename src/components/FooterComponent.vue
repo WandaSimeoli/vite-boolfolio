@@ -12,9 +12,14 @@ export default {
 </script>
 
 <template>
-
+<footer>
+  footer
+</footer>
 </template>
 
 <style scoped lang="scss">
-@use "assets/scss/main.scss" as *;
+footer {
+  color: red;
+  text-transform: uppercase;
+}
 </style>

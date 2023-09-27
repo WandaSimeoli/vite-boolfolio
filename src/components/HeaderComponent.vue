@@ -12,9 +12,14 @@ export default {
 </script>
 
 <template>
-
+<header>
+  Header
+</header>
 </template>
 
 <style scoped lang="scss">
-@use "assets/scss/main.scss" as *;
+header {
+  color: red;
+  text-transform: uppercase;
+}
 </style>
