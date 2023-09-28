@@ -2,10 +2,13 @@
 
 export default {
   components :{
+    name:'HeaderComponent'
   },
 
   data() {
-    return {  }
+    return { 
+      title:'HeaderComponent'
+     }
   },
   methods: {}
 }

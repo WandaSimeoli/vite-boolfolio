@@ -2,10 +2,13 @@
 
 export default {
   components :{
+    name:'FooterComponent'
   },
 
   data() {
-    return {  }
+    return { 
+      title:'FooterComponent'
+     }
   },
   methods: {}
 }

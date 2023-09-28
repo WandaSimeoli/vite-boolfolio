@@ -2,12 +2,12 @@
 
 export default {
   components :{
-    name: 'MainComponent'
+    name: 'ProjectComponent'
   },
 
   data() {
     return { 
-      title: 'MainComponent'
+      title: 'ProjectComponent'
      }
   },
   methods: {}
@@ -15,14 +15,9 @@ export default {
 </script>
 
 <template>
-<main>
-  <router-view></router-view>
-</main>
+
 </template>
 
 <style scoped lang="scss">
-main {
-  text-transform: uppercase;
 
-}
 </style>

@@ -6,17 +6,17 @@ export default {
 
   data() {
     return { 
-      projects : {},
-      type : []
+        title :'HomePageComponent',
+      projects : []
      }
   },
   created() {
     axios 
     .get('http://localhost:8000/api/projects')
     .then( res => {
-      console.log(res);
+      console.log(res.data.results);
       this.projects = res.data.results;
-      this.type = res.data.results;
+      console.log(this.projects[0].type.title);
     });
   },
   methods: {}
@@ -24,23 +24,20 @@ export default {
 </script>
 
 <template>
-<main>
-  <div class="container">
+<div class="container">
     <div v-for="project in projects" :key="project.id" class="card">
       <h3>
         {{ project.title }}
       </h3>
       <p>  {{ project.content }}</p>
-      <div> {{  }}</div>
+      <div v-if="project.type_id !== null"> {{ project.type.title }}</div>
+      <div v-else>None</div>
     </div>
   </div>
-</main>
 </template>
 
 <style scoped lang="scss">
-main {
-  text-transform: uppercase;
-  .container {
+.container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -56,5 +53,4 @@ main {
       border: 1px solid black;
       text-align: center;
   }
-}
 </style>
