@@ -1,35 +1,29 @@
 <script>
-import axios from 'axios';
+
+import ProjectComponent from './ProjectComponent.vue';
 
 export default {
   components :{
+    ProjectComponent,
   },
 
   data() {
     return { 
-      projects : []
      }
   },
-  // created() {
-  //   axios 
-  //   .get('http://localhost:8000/api/projects')
-  //   .then( res => {
-  //     console.log(res);
-  //   });
-  // },
   methods: {}
 }
 </script>
 
 <template>
 <main>
-  main
+  <ProjectComponent />
 </main>
 </template>
 
 <style scoped lang="scss">
 main {
-  color: red;
   text-transform: uppercase;
+
 }
 </style>
