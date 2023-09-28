@@ -24,19 +24,23 @@ export default {
 </script>
 
 <template>
-<div class="container">
+<main>
+  <div class="container">
     <div v-for="project in projects" :key="project.id" class="card">
       <h3>
         {{ project.title }}
       </h3>
       <p>  {{ project.content }}</p>
-      <div> {{ project.type.title }}</div>
+      <div> {{  }}</div>
     </div>
   </div>
+</main>
 </template>
 
 <style scoped lang="scss">
-.container {
+main {
+  text-transform: uppercase;
+  .container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -52,4 +56,5 @@ export default {
       border: 1px solid black;
       text-align: center;
   }
+}
 </style>
