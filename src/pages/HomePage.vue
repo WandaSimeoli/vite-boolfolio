@@ -32,6 +32,7 @@ export default {
       <p>  {{ project.content }}</p>
       <div v-if="project.type_id !== null"> {{ project.type.title }}</div>
       <div v-else>None</div>
+      <li><router-link :to="{name:'project', params: {slug: project.slug}}">Look this project</router-link></li>
     </div>
   </div>
 </template>

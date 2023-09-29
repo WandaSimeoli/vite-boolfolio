@@ -12,7 +12,7 @@ name: 'home',
 component: HomePage
 },
  {
- path: '/project',
+ path: '/project/:slug',
  name: 'project',
  component: ProjectComponent
  },
