@@ -14,8 +14,13 @@ export default {
     axios 
     .get('http://localhost:8000/api/projects/' + this.$route.params.slug)
     .then( res => {
-      this.project = res.data.result;
       console.log(res.data.result);
+      if(res.data.result) {
+        this.project = res.data.result;
+      } else {
+        this.$router.push({name: '404NotFound'})
+      }
+
     });
   },
   methods: {}

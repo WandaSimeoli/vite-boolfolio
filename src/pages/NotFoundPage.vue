@@ -2,12 +2,12 @@
 
 export default {
   components :{
-    name: '404 Not Found'
+    name: '404page'
   },
 
   data() {
     return { 
-      title: '404Page'
+      title: '404 Not Found'
      }
   },
   methods: {}
@@ -15,7 +15,9 @@ export default {
 </script>
 
 <template>
-{{ title }}
+<h2>
+  {{ title }}
+</h2>
 </template>
 
 <style scoped lang="scss">
