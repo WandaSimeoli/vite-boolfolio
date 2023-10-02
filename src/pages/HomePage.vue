@@ -16,7 +16,7 @@ export default {
     .then( res => {
       console.log(res.data.results);
       this.projects = res.data.results;
-      console.log(this.projects.image);
+      console.log(this.projects[0].image);
     });
   },
   methods: {}
@@ -29,7 +29,9 @@ export default {
       <h3>
         {{ project.title }}
       </h3>
-      <img :src="`http://127.0.0.1:8000/storage/$(project.image)`" alt="">
+      <div v-if="project.full_image">
+        <img :src="`${project.full_image}`" alt="">
+      </div>
       <p>  {{ project.content }}</p>
       <div v-if="project.type_id !== null"> {{ project.type.title }}</div>
       <div v-else>None</div>
@@ -54,5 +56,8 @@ export default {
       width: calc(100% / 4);
       border: 1px solid black;
       text-align: center;
+  }
+  img {
+    width: 50%;
   }
 </style>
