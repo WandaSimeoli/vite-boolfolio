@@ -35,6 +35,9 @@ export default {
         <h3>
         {{ project.title }}
       </h3>
+      <div v-if="project.full_image">
+        <img :src="`${project.full_image}`" alt="">
+      </div>
       <p>  {{ project.content }}</p>
     </div>
       </div>
@@ -57,5 +60,8 @@ export default {
       width: calc(100% / 4);
       border: 1px solid black;
       text-align: center;
+      img {
+    width: 50%;
+  }
   }
 </style>

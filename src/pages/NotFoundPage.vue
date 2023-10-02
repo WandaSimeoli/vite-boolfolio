@@ -2,7 +2,7 @@
 
 export default {
   components :{
-    name: '404page'
+    name: '404Page'
   },
 
   data() {
