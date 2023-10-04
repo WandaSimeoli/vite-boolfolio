@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 
 export default {
   components :{
@@ -7,17 +9,25 @@ export default {
 
   data() {
     return { 
-      title: 'Contact',
       contactData :{
         name:'',
         email:'',
-        message:''
+        message:'',
       }
      }
   },
   methods: {
     sendMessage() {
-      alert('Send Message');
+     axios
+     .post('http://localhost:8000/api/contacts', this.contactData)
+     .then(response =>{
+      console.log(response);
+      alert('Message sent');
+     }) 
+     .catch(err => {
+      console.log(err.response.data);
+      alert('Invalid data');
+     });
     }
   }
 }
@@ -25,12 +35,13 @@ export default {
 
 <template>
 <h2>
-  {{ title }}
+ <h2>Contact</h2>
 </h2>
 <div class="container">
 <form @submit.prevent="sendMessage()">
   <label for="name">
      Your Name
+     {{ contactData.name }}
      <span>*</span>
   </label>
   <input type="text" name="name" id="name" placeholder="Enter your name" v-model="contactData.name" minlength="3" required>
